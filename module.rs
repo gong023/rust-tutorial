@@ -1,10 +1,6 @@
 use std::string::String;
 
-mod print {
-    pub fn say(num: int, says: String) {
-        println!("num: {}, says: {}", num, says);
-    }
-}
+mod print;
 
 struct Plain { num: int, says: String }
 impl Plain {
@@ -16,4 +12,7 @@ impl Plain {
 fn main() {
     let plain = Plain { num: 3, says: String::from_str("Fizz") };
     plain.execute();
+
+    let hi = ::print::Hi;
+    hi.execute();
 }
